@@ -1,0 +1,88 @@
+package mongodb.entity;
+
+import java.util.Objects;
+
+public class Reparacion {
+	
+	private static int idAuto = 1;
+	private int id;
+	private Coche coche;
+	private String matriculaCoche;
+	private double PVP;
+	private String descripcion;
+	
+	public Reparacion() {
+		
+	}
+	
+	public Reparacion(Coche coche, double pVP, String descripcion) {
+		super();
+		this.id = idAuto;
+		this.coche = coche;
+		PVP = pVP;
+		this.descripcion = descripcion;
+		idAuto++;
+		if(coche!= null) {
+			this.matriculaCoche = this.coche.getMatricula();
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Reparacion [id=" + id + ", coche=" + coche + ", matriculaCoche=" + matriculaCoche + ", PVP=" + PVP
+				+ ", descripcion=" + descripcion + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Coche getCoche() {
+		return coche;
+	}
+
+	public void setCoche(Coche coche) {
+		this.coche = coche;
+		this.matriculaCoche=coche.getMatricula();
+	}
+	public String getMatriculaCoche() {
+		return matriculaCoche;
+	}
+
+	public double getPVP() {
+		return PVP;
+	}
+
+	public void setPVP(double pVP) {
+		PVP = pVP;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Reparacion that = (Reparacion) obj;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }	
+}

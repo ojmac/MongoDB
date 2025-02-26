@@ -1,0 +1,66 @@
+package mongodb.practica;
+
+import java.util.List;
+
+public class Coche {
+	
+	private String matricula;
+	private String marca;
+	private String modelo;
+	private PermisoCirc permisoCirc;
+	private List<Reparacion> reparaciones;
+	private List<Conductor> conductores;
+	
+
+	public Coche() {
+		
+	}
+S
+	public Coche(String matricula, String marca, String modelo, PermisoCirc permisoCirc) {
+		super();
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.permisoCirc = permisoCirc;
+	}
+	public String getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public PermisoCirc getPermisoCirc() {
+		return permisoCirc;
+	}
+	public void setPermisoCirc(PermisoCirc permisoCirc) {
+		this.permisoCirc = permisoCirc;
+	}
+	public List<Reparacion> getReparaciones() {
+		return reparaciones;
+	}
+	public void setReparaciones(List<Reparacion> reparaciones) {
+		this.reparaciones = reparaciones;
+	}
+	public List<Conductor> getConductores() {
+		return conductores;
+	}
+	public void setConductores(List<Conductor> conductores) {
+		this.conductores = conductores;
+	}
+	
+	
+	
+
+}

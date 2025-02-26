@@ -1,0 +1,170 @@
+package mongodb;
+
+import java.util.List;
+
+import org.bson.Document;
+
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
+import com.mongodb.client.result.DeleteResult;
+
+import mongodb.entity.Coche;
+import mongodb.entity.Conductor;
+import mongodb.entity.PermisoCirc;
+import mongodb.entity.Reparacion;
+
+
+public class Practica {
+	
+    private final static String COCHES = "Coches";
+    private final static String DATABASE = "PracticaMongoDB";
+    private final static String PERMISOS = "PermisosCirculacion";
+    private final static String CONDUCTORES = "Conductores";
+    private final static String REPARACIONES = "Reparaciones";
+
+    private MongoClient mongoClient;
+    private MongoDatabase baseDatos;
+    
+    private MongoCollection<Document> coleccionCoches;
+    private MongoCollection<Document> coleccionPermisos;
+    private MongoCollection<Document> coleccionConductores;
+    private MongoCollection<Document> coleccionReparaciones;
+    
+    public void conectar() {     
+    	
+        String connectionString = "mongodb://localhost:27017/";
+        
+        try {
+        	mongoClient = MongoClients.create(connectionString);
+            baseDatos = mongoClient.getDatabase(DATABASE);
+            
+            coleccionCoches = baseDatos.getCollection(COCHES);
+            coleccionPermisos = baseDatos.getCollection(PERMISOS);
+            coleccionConductores = baseDatos.getCollection(CONDUCTORES);
+            coleccionReparaciones = baseDatos.getCollection(REPARACIONES);
+            
+        } catch(Exception e)
+        {
+        	System.out.println(e.getStackTrace());
+        }
+    }
+
+    public void desconectar(){
+    	mongoClient.close();
+    }
+
+    public void guardarCoche(Coche coche) {
+        coleccionCoches.insertOne(cocheToDocument(coche));
+    }
+
+    public void guardarPermiso(PermisoCirc permiso) {
+        coleccionPermisos.insertOne(permisoToDocument(permiso));
+    }
+
+    public void guardarConductor(Conductor conductor) {
+        coleccionConductores.insertOne(conductorToDocument(conductor));
+    }
+
+    public void guardarReparacion(Reparacion reparacion) {
+        coleccionReparaciones.insertOne(reparacionToDocument(reparacion));
+    }
+
+    // 2. Buscar documentos por ID
+    public Document buscarCochePorId(String id) {
+        return coleccionCoches.find(Filters.eq("_id", id)).first();
+    }
+
+    public Document buscarPermisoPorId(String id) {
+        return coleccionPermisos.find(Filters.eq("_id", id)).first();
+    }
+
+    public Document buscarConductorPorId(String id) {
+        return coleccionConductores.find(Filters.eq("_id", id)).first();
+    }
+
+    public Document buscarReparacionPorId(int id) {
+        return coleccionReparaciones.find(Filters.eq("_id", id)).first();
+    }
+
+    // 3. Eliminar documentos por ID
+    public boolean eliminarCoche(String id) {
+        DeleteResult result = coleccionCoches.deleteOne(Filters.eq("_id", id));
+        return result.getDeletedCount() > 0;
+    }
+
+    public boolean eliminarPermiso(String id) {
+        DeleteResult result = coleccionPermisos.deleteOne(Filters.eq("_id", id));
+        return result.getDeletedCount() > 0;
+    }
+
+    public boolean eliminarConductor(String id) {
+        DeleteResult result = coleccionConductores.deleteOne(Filters.eq("_id", id));
+        return result.getDeletedCount() > 0;
+    }
+
+    public boolean eliminarReparacion(int id) {
+        DeleteResult result = coleccionReparaciones.deleteOne(Filters.eq("_id", id));
+        return result.getDeletedCount() > 0;
+    }
+
+    // 4. Obtener todos los documentos de cada colección
+    public List<Document> obtenerTodosLosCoches() {
+        return coleccionCoches.find().into(new java.util.ArrayList<>());
+    }
+
+    public List<Document> obtenerTodosLosPermisos() {
+        return coleccionPermisos.find().into(new java.util.ArrayList<>());
+    }
+
+    public List<Document> obtenerTodosLosConductores() {
+        return coleccionConductores.find().into(new java.util.ArrayList<>());
+    }
+
+    public List<Document> obtenerTodosLosReparaciones() {
+        return coleccionReparaciones.find().into(new java.util.ArrayList<>());
+    }
+
+    // 5. Obtener coches filtrando por marca (ejemplo de criterio de búsqueda)
+    public List<Document> buscarCochesPorMarca(String marca) {
+        return coleccionCoches.find(Filters.eq("marca", marca)).into(new java.util.ArrayList<>());
+    }
+
+    // 6. Obtener reparaciones de un coche en base a su ID
+    public List<Document> obtenerReparacionesPorCoche(String matriculaCoche) {
+        return coleccionReparaciones.find(Filters.eq("matriculaCoche", matriculaCoche)).into(new java.util.ArrayList<>());
+    }
+
+    //Crear Documentos
+    private Document cocheToDocument(Coche coche) {
+        return new Document("_matricula", coche.getMatricula())
+                .append("marca", coche.getMarca())
+                .append("modelo", coche.getModelo())
+                .append("permisoCirculacionId", coche.getPermisoCircId())
+                .append("conductoresIds", coche.getConductoresIds())
+                .append("reparacionesIds", coche.getReparacionesIds());
+    }
+
+    private Document permisoToDocument(PermisoCirc permiso) {
+        return new Document("_numId", permiso.getNumID())
+                .append("matriculaCoche", permiso.getMatriculaCoche())
+                .append("fechaVto", permiso.getFechaVto())
+                .append("fechaExp", permiso.getFechaExp());
+    }
+
+    private Document conductorToDocument(Conductor conductor) {
+        return new Document("_idCond", conductor.getIdCond())
+                .append("numCarnet", conductor.getNumCarnet())
+                .append("coches", conductor.getMatriculasCoches());
+    }
+
+    private Document reparacionToDocument(Reparacion reparacion) {
+        return new Document("_id", reparacion.getId())
+        		.append("matriculaCoche", reparacion.getMatriculaCoche())
+                .append("descripcion", reparacion.getDescripcion())
+                .append("PVP", reparacion.getPVP());
+    }
+}
+

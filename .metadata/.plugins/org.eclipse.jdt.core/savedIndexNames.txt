@@ -1,0 +1,15 @@
+INDEX VERSION 1.134+C:\Users\user\mongodb_practica\.metadata\.plugins\org.eclipse.jdt.core
+3255311239.index
+3424339551.index
+1865797976.index
+3599025263.index
+3770597553.index
+356355350.index
+3953809652.index
+556723855.index
+637466315.index
+1122452100.index
+3785078210.index
+215544808.index
+769167226.index
+879893944.index

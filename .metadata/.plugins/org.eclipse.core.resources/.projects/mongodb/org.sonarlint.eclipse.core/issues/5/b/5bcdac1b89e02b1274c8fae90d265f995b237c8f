@@ -1,0 +1,57 @@
+
+f	java:S106¦"+Replace this use of System.out by a logger.8‰ğ´›Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106é"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106¯"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+s
+java:S1854•"7Remove this useless assignment to local variable "doc".8óèœüÑ2b be9a420a9b7823c0c07774049a170199h
+f	java:S106í"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106‚"+Replace this use of System.err by a logger.8±œùÑ2b af259b5629da223c99d853ddc8045589h
+f	java:S106œ"+Replace this use of System.out by a logger.8…£ôõÒ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106³"+Replace this use of System.out by a logger.8óèœüÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106l"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+]	java:S131œ""Add a default case to this switch.8ûˆåúÑ2b b36eb6a54154f7301f004e1e61c87ce8h
+f	java:S106¹"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+~
+java:S2583"CChange this condition so that it does not always evaluate to "true"8…£ôõÒ2b 64d3375281111c4babcb6bcaee9f6302h
+f	java:S106å"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106‡"+Replace this use of System.out by a logger.8…£ôõÒ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+]	java:S131İ""Add a default case to this switch.8Õ¡®öÑ2b b36eb6a54154f7301f004e1e61c87ce8h
+e	java:S106h"+Replace this use of System.out by a logger.8±ÆĞùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106—"+Replace this use of System.out by a logger.8ßıóûÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106”"+Replace this use of System.err by a logger.8Õ¡®öÑ2b af259b5629da223c99d853ddc8045589h
+e	java:S106#"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106/"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106"+Replace this use of System.out by a logger.8Ü¥ä¡Ó2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106T"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106O"+Replace this use of System.out by a logger.8ˆÕŞôÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106ü"+Replace this use of System.err by a logger.8Õ¡®öÑ2b af259b5629da223c99d853ddc8045589h
+f	java:S106«"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106;"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106t"+Replace this use of System.out by a logger.8óèœüÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Š"+Replace this use of System.out by a logger.8±ÆĞùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+\	java:S131I""Add a default case to this switch.8±œùÑ2b b36eb6a54154f7301f004e1e61c87ce8h
+f	java:S106¶"+Replace this use of System.out by a logger.8í¯†¢Ó2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106\"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Ç"+Replace this use of System.out by a logger.8ùùóÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106D"+Replace this use of System.out by a logger.8±œùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Á"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+k
+java:S3740ú"/Provide the parametrized type for this generic.8¤°ıüÑ2b 57a97a39435cfdfed96e03f2a3bc27ceh
+f	java:S106ñ"+Replace this use of System.out by a logger.8ûÕ×£Ó2b bb1c3f2ea781263d3a2bb92b06a2061fh
+
+java:S3776>"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.8…£ôõÒ2b fe1e00d53831e2e225f0c9ace53f4871h
+f	java:S106¸"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Ë"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106¢"+Replace this use of System.out by a logger.8±ÆĞùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106"+Replace this use of System.out by a logger.8©Ûó£Ó2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106…"+Replace this use of System.out by a logger.8…£ôõÒ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Ï"+Replace this use of System.out by a logger.8óèœüÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+k
+java:S3740’"/Provide the parametrized type for this generic.8‡÷´üÑ2b 57a97a39435cfdfed96e03f2a3bc27ceh
+e	java:S106a"+Replace this use of System.out by a logger.8È´Ó˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Ú"+Replace this use of System.out by a logger.8í¯†¢Ó2b bb1c3f2ea781263d3a2bb92b06a2061fh
+e	java:S106y"+Replace this use of System.out by a logger.8±œùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106½"+Replace this use of System.out by a logger.8±ÆĞùÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106á"+Replace this use of System.out by a logger.8ûˆåúÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106"+Replace this use of System.out by a logger.8Õ¡®öÑ2b bb1c3f2ea781263d3a2bb92b06a2061fh

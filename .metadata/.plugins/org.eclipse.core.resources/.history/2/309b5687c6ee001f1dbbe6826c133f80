@@ -1,0 +1,100 @@
+package mongodb.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class Conductor {
+	
+	private String idCond;
+	private int numCarnet;
+	private List<Coche> coches;
+	private List<String> matriculasCoches;
+	
+	public Conductor() {
+		
+	}
+	
+	public Conductor(String idCond, int numCarnet, List<Coche> coches) {
+		super();
+		this.idCond = idCond;
+		this.numCarnet = numCarnet;
+		this.coches = new ArrayList();
+		this.matriculasCoches = new ArrayList();
+	}
+
+	public String getIdCond() {
+		return idCond;
+	}
+
+	public void setIdCond(String idCond) {
+		this.idCond = idCond;
+	}
+
+	public int getNumCarnet() {
+		return numCarnet;
+	}
+
+	public void setNumCarnet(int numCarnet) {
+		this.numCarnet = numCarnet;
+	}
+
+	public List<Coche> getCoches() {
+		return coches;
+	}
+
+	public void setCoches(List<Coche> coches) {
+		this.coches = coches;
+		for (Coche coche: coches) {
+			matriculasCoches.add(coche.getMatricula());
+		}
+	}
+	
+	public void addCoche(Coche coche) {
+		this.coches.add(coche);
+		this.matriculasCoches.add(coche.getMatricula());
+	}
+	
+	public void delCoche(Coche coche) {
+		
+		String matricula = coche.getMatricula();
+		
+		for (Coche c : coches) {
+			if(c.equals(coche)){
+				this.coches.remove(c);
+				break;
+			}
+		}
+		for(String m : matriculasCoches) {
+			if( m.equalsIgnoreCase(matricula)) {
+				this.matriculasCoches.remove(m);	
+			}	
+		}
+	}
+	
+	
+    public List<String> getMatriculasCoches() {
+		return matriculasCoches;
+	}
+
+	public void setMatriculasCoches(List<String> matriculasCoches) {
+		this.matriculasCoches = matriculasCoches;
+	}
+
+	@Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Conductor that = (Conductor) obj;
+        return Objects.equals(idCond, that.idCond);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCond);
+    }	
+}

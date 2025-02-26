@@ -1,0 +1,45 @@
+package mongodb;
+
+import org.junit.jupiter.api.Test;
+import mongodb.entity.*;
+
+class PracticaTest {
+
+    @Test
+    public void TestRegistrarCoche(){
+    	
+    	Coche coche = new Coche("111AAA", "BMW", "X5", null);
+    	
+    	Conductor condA = new Conductor("permisoA-1", 121212);
+    	Conductor condB = new Conductor("permisoB-2", 131313);
+    	
+    	Reparacion rep1 = new Reparacion(coche, 200, "Cambio luna delantera");
+    	Reparacion rep2 = new Reparacion(coche, 1400, "Pintar todo el coche");
+    	
+    	PermisoCirc permiso = new PermisoCirc ("1A", coche, "2028/12/01", "2023/12/01");
+    	
+    	coche.AddConductor(condA);
+    	coche.AddConductor(condB);
+    	
+    	coche.AddReparacion(rep1);
+    	coche.AddReparacion(rep2);
+    	
+    	coche.setPermisoCirc(permiso);
+    	
+    	Practica practica = new Practica();
+    	practica.conectar();  
+    	
+    	practica.guardarCoche(coche);
+    	
+    	practica.guardarConductor(condA);
+    	practica.guardarConductor(condB);
+    	
+    	practica.guardarReparacion(rep1);
+    	practica.guardarReparacion(rep2);
+    	
+    	practica.guardarPermiso(permiso);
+    	
+    	practica.desconectar();
+    }
+
+}

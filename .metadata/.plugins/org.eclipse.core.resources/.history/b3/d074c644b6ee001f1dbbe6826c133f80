@@ -1,0 +1,95 @@
+package mongodb.entity;
+
+import java.util.List;
+
+public class Coche {
+	
+	private String matricula;
+	private String marca;
+	private String modelo;
+	private String permisoCircId;
+	private List<String> reparacionesIds;
+	private List<String> conductoresIds;
+	
+
+	public Coche() {
+		
+	}
+
+	public Coche(String matricula, String marca, String modelo, String permisoCircId) {
+		super();
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.permisoCircId = permisoCircId;
+	}
+	public String getPermisoCircId() {
+		return permisoCircId;
+	}
+
+	public void setPermisoCircId(String permisoCircId) {
+		this.permisoCircId = permisoCircId;
+	}
+
+	public List<String> getReparacionesIds() {
+		return reparacionesIds;
+	}
+
+	public void setReparacionesIds(List<String> reparaciones) {
+		this.reparacionesIds = reparaciones;
+	}
+	
+	public void AddReparacion(String reparacionId) {
+		this.reparacionesIds.add(reparacionId);
+	}
+	public void DelReparacion(String reparacionId) {
+		for (String repId : this.reparacionesIds) {
+			if(repId.equalsIgnoreCase(reparacionId)) {
+				this.reparacionesIds.remove(repId);
+				break;
+			}
+		}
+	}
+	public List<String> getConductoresIds() {
+		return conductoresIds;
+	}
+
+	public void setConductoresIds(List<String> conductoresIds) {
+		this.conductoresIds = conductoresIds;
+	}
+	public void AddConductor(String conductorId) {
+		this.conductoresIds.add(conductorId);
+	}
+	public void DelConductor(String conductorId) {
+		for (String condId : this.conductoresIds) {
+			if(condId.equalsIgnoreCase(conductorId)) {
+				this.reparacionesIds.remove(condId);
+				break;
+			}
+		}
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public String getModelo() {
+		return this.modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	
+	
+	
+
+}

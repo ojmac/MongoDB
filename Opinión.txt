@@ -1,0 +1,4 @@
+MongoDB me parece más intuitivo, y que "casa" mejor con el concepto de Objetos(clases), creo que recoge este concepto mejor que ORM. Parece fácil de usar, 
+si bien creo que se debe de aprender bastante lenguaje para realizar sus consultas.
+ORM, me parece mejor para tablas SQL que debas de "traducir" a Java, ya que es un método intermedio entre ambos.
+Tiene la ventaja, para mi que ya tengo una base SQL, si bien también tiene sus propias consultas, son más parecidas al SQL conocido.

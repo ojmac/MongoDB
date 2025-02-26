@@ -1,0 +1,166 @@
+package mongodb.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Coche {
+
+	private String matricula;
+	private String marca;
+	private String modelo;
+	private String permisoCircId;
+	private PermisoCirc permisoCirc;
+	private List<Reparacion> reparaciones;
+	private List<Conductor> conductores;
+	private List<Integer> reparacionesIds;
+	private List<String> conductoresIds;
+
+	public Coche() {
+
+	}
+
+	public Coche(String matricula, String marca, String modelo, PermisoCirc permisoCirc) {
+		super();
+		this.matricula = matricula;
+		this.marca = marca;
+		this.modelo = modelo;
+		this.permisoCirc = permisoCirc;
+		
+		if (permisoCirc != null) {
+			this.permisoCircId = permisoCirc.getNumID();
+		}
+
+		reparaciones = new ArrayList();
+		conductores = new ArrayList();
+		reparacionesIds = new ArrayList();
+		conductoresIds = new ArrayList();
+	}
+
+	@Override
+	public String toString() {
+		return "Coche [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", permisoCircId="
+				+ permisoCircId + ", permisoCirc=" + permisoCirc + ", reparaciones=" + reparaciones + ", conductores="
+				+ conductores + ", reparacionesIds=" + reparacionesIds + ", conductoresIds=" + conductoresIds + "]";
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return this.modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+
+	public PermisoCirc getPermisoCirc() {
+		return permisoCirc;
+	}
+
+	public void setPermisoCirc(PermisoCirc permisoCirc) {
+		this.permisoCirc = permisoCirc;
+		this.permisoCircId = permisoCirc.getNumID();
+		this.permisoCirc.setCoche(this);
+	}
+
+	public String getPermisoCircId() {
+		return permisoCircId;
+	}
+
+	public List<Reparacion> getReparaciones() {
+		return reparaciones;
+	}
+
+	public void setReparaciones(List<Reparacion> reparaciones) {
+		this.reparaciones = reparaciones;
+		for (Reparacion rep : reparaciones) {
+			reparacionesIds.add(rep.getId());
+		}
+	}
+
+	public void AddReparacion(Reparacion reparacion) {
+		this.reparaciones.add(reparacion);
+		this.reparacionesIds.add(reparacion.getId());
+	}
+
+	public void DelReparacion(Reparacion reparacion) {
+		for (Reparacion rep : this.reparaciones) {
+			if (rep.equals(reparacion)) {
+				this.reparacionesIds.remove(rep);
+				break;
+			}
+		}
+		for (int repId : this.reparacionesIds) {
+			if (repId== reparacion.getId()) {
+				this.reparacionesIds.remove(repId);
+				break;
+			}
+		}
+	}
+
+	public List<Conductor> getConductores() {
+		return conductores;
+	}
+
+	public void setConductores(List<Conductor> conductores) {
+		this.conductores = conductores;
+		for (Conductor cond : conductores) {
+			conductoresIds.add(cond.getIdCond());
+		}
+	}
+
+	public void AddConductor(Conductor conductor) {
+		this.conductores.add(conductor);
+		this.conductoresIds.add(conductor.getIdCond());
+	}
+
+	public void DelCOnductor(Conductor conductor) {
+		for (Conductor cond : this.conductores) {
+			if (cond.equals(conductor)) {
+				this.conductoresIds.remove(cond);
+				break;
+			}
+		}
+		for (String condId : this.conductoresIds) {
+			if (condId.equalsIgnoreCase(conductor.getIdCond())) {
+				this.reparacionesIds.remove(condId);
+				break;
+			}
+		}
+	}
+
+	public void setPermisoCircId(String permisoCircId) {
+		this.permisoCircId = permisoCircId;
+	}
+
+	public List<Integer> getReparacionesIds() {
+		return reparacionesIds;
+	}
+
+	public void setReparacionesIds(List<Integer> reparaciones) {
+		this.reparacionesIds = reparaciones;
+	}
+
+	public List<String> getConductoresIds() {
+		return conductoresIds;
+	}
+
+	public void setConductoresIds(List<String> conductoresIds) {
+		this.conductoresIds = conductoresIds;
+	}
+
+}

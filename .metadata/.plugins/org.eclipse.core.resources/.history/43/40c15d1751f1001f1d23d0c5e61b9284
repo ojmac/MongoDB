@@ -1,0 +1,128 @@
+package mongodb;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+import mongodb.entity.Coche;
+import mongodb.entity.Conductor;
+import mongodb.entity.PermisoCirc;
+import mongodb.entity.Reparacion;
+
+class ControlTest {
+
+	Control control = new Control();
+
+	@Test
+	public void TestRegistrarCoche() {
+
+		Coche coche = new Coche("111AAA", "BMW", "X5", null);
+		Coche coche2 = new Coche("222BBB", "BMW", "X1", null);
+		Coche coche3 = new Coche("333CCC", "Volvo", "Ctg", null);
+		
+
+		Conductor condA = new Conductor("a", 121212);
+		Conductor condB = new Conductor("permiso B-2", 131313);
+		Conductor condC = new Conductor("permiso C-3", 141414);
+
+		Reparacion rep1 = new Reparacion(coche, 200, "Cambio retrovisor");
+		Reparacion rep2 = new Reparacion(coche, 1400, "Pintar todo el coche");
+		Reparacion rep3 = new Reparacion(coche2, 500, "Cambio luna delantera");
+		Reparacion rep4 = new Reparacion(coche2, 400, "Recarga A/A");
+		Reparacion rep5 = new Reparacion(coche3, 300, "Cambio aceite y filtros");
+		Reparacion rep6 = new Reparacion(coche3, 1500, "Aleta lateral derecha");
+
+		PermisoCirc permiso = new PermisoCirc("1A", coche, "2028/12/01", "2023/12/01");
+		PermisoCirc permiso2 = new PermisoCirc("2B", coche2, "2028/12/02", "2023/12/02");
+		PermisoCirc permiso3 = new PermisoCirc("3C", coche3, "2028/12/03", "2023/12/03");
+
+		coche.AddConductor(condA);
+		coche.AddConductor(condB);
+		
+		coche2.AddConductor(condB);
+		coche2.AddConductor(condC);
+		
+		coche3.AddConductor(condA);
+		coche3.AddConductor(condC);
+		
+		
+
+		coche.AddReparacion(rep1);
+		coche.AddReparacion(rep2);
+		
+		coche2.AddReparacion(rep3);
+		coche2.AddReparacion(rep4);
+		
+		coche3.AddReparacion(rep5);
+		coche3.AddReparacion(rep6);
+
+		coche.setPermisoCirc(permiso);
+		coche2.setPermisoCirc(permiso2);
+		coche3.setPermisoCirc(permiso3);
+
+		control.registrarCoche(coche);
+		control.registrarCoche(coche2);
+		control.registrarCoche(coche3);
+		
+	}
+
+	@Test
+	public void TestRegistrarConductor() {
+
+		Conductor condD = new Conductor("permiso D-4", 151515);
+
+		control.registrarConductor(condD);
+	}
+	
+	@Test
+	public void TestBuscarDocXId() {
+		
+		control.buscarDocXId();
+	}
+	
+	@Test
+	public void TestEliminarDocsPorId() {
+		
+		control.eliminarDocsPorId();
+	}
+	
+	@Test
+	public void TestObtObjsCoche() {
+		
+		List<Coche> todosLosCoches = control.obtObjsCoche();
+		
+	}
+	
+	@Test
+	public void TestObtObjsReparacion() {
+		
+		List<Reparacion> todasLasReparaciones =control.obtObjsReparacion();
+		
+	}
+	
+	@Test
+	public void TestObtenerReparacionesPorMarca() {
+		
+		String marca = "BMW";
+		
+		List<Reparacion> repsXMarca = control.obtenerReparacionesPorMarca(marca);
+		
+	}
+	
+	@Test
+	public void TestObtenerCochesConReparacionesCostosas() {
+		
+		double limite = 1000;
+		
+		List<Coche> CochesRepsCostosas = control.obtenerCochesConReparacionesCostosas(limite);
+			
+		
+	}
+	@Test
+	public void TestBorrarBd() {
+		control.resetBD();
+	}
+}

@@ -1,0 +1,40 @@
+
+‡
+java:S1192š"KDefine a constant instead of duplicating this literal "_matricula" 3 times.8¥±œùÑ2b ca33773c6f36cc42dd2797d7384b3a82h
+‰	java:S100º"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.8âıóûÑ2b 1f876d1c7eb659be4df1af3d5cc06e2dh
+‹
+java:S1192"ODefine a constant instead of duplicating this literal "matriculaCoche" 7 times.8ÿÖ²óÑ2b 691dd1a40c13e8b493764ef00dfe109bh
+‚
+java:S1192‹"FDefine a constant instead of duplicating this literal "marca" 3 times.8¥±œùÑ2b b375f27c9ae820c33431ed8515f681f3h
+€
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.8şïÏòÑ2b a81259cef8e959c624df1d456e5d3297h
+€
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.8şïÏòÑ2b a81259cef8e959c624df1d456e5d3297h
+^	java:S1063"+Replace this use of System.out by a logger.b bb1c3f2ea781263d3a2bb92b06a2061fh
+k
+java:S3740"/Provide the parametrized type for this generic.8¥±œùÑ2b 57a97a39435cfdfed96e03f2a3bc27ceh
+y
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.b a81259cef8e959c624df1d456e5d3297h
+€
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.8şïÏòÑ2b a81259cef8e959c624df1d456e5d3297h
+e	java:S1066"+Replace this use of System.out by a logger.8®ˆ÷˜Ò2b bb1c3f2ea781263d3a2bb92b06a2061fh
+Œ
+java:S1450"XRemove the "baseDatos" field and declare it as a local variable in the relevant methods.b 552fe8e1add5037eb595219ddd1caa89h
+ƒ
+java:S1192°"GDefine a constant instead of duplicating this literal "coches" 4 times.8âıóûÑ2b 9f6f0b70c9886b8c9715bc373a68fba6h
+y
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.b a81259cef8e959c624df1d456e5d3297h
+™
+java:S1488ò"]Immediately return this expression instead of assigning it to the temporary variable "coche".8ˆ¾ÖõÒ2b 2a4f861c4233fe3400bd5d3c227c898bh
+v
+java:S1854À":Remove this useless assignment to local variable "coches".8ˆ¾ÖõÒ2b eeae1fce9a4ec3e2ec983c4dc9a6bd4dh
+g
+java:S1481À"+Remove this unused "coches" local variable.8ˆ¾ÖõÒ2b 349947ffecb0db4b14e90bc4e0d49d77h
+f	java:S106Å"+Replace this use of System.out by a logger.8ˆ¾ÖõÒ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+f	java:S106Ç"+Replace this use of System.out by a logger.8ˆ¾ÖõÒ2b bb1c3f2ea781263d3a2bb92b06a2061fh
+‹
+java:S1192¥"ODefine a constant instead of duplicating this literal "conductoresIds" 4 times.8á´©ùÒ2b 32851010f8429c5ede8e07dc1b6be5f0h
+Œ
+java:S1192¦"PDefine a constant instead of duplicating this literal "reparacionesIds" 4 times.8ş™ÁùÒ2b 847e8952be26ebe39d0826967d6ec4eeh
+m
+java:S1144ñ"1Remove this unused private "obtenerCoche" method.8Ûğº£Ó2b 52dc36876ec6f9aa1455457453a4ff19h

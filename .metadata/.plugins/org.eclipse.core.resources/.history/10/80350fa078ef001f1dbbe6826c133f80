@@ -1,0 +1,47 @@
+package mongodb;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import mongodb.entity.Coche;
+import mongodb.entity.Conductor;
+import mongodb.entity.PermisoCirc;
+import mongodb.entity.Reparacion;
+
+class ControlTest {
+
+	Control control = new Control();
+
+	@Test
+	public void TestRegistrarCoche() {
+
+		Coche coche = new Coche("111AAA", "BMW", "X5", null);
+
+		Conductor condA = new Conductor("permisoA-1", 121212);
+		Conductor condB = new Conductor("permisoB-2", 131313);
+
+		Reparacion rep1 = new Reparacion(coche, 200, "Cambio luna delantera");
+		Reparacion rep2 = new Reparacion(coche, 1400, "Pintar todo el coche");
+
+		PermisoCirc permiso = new PermisoCirc("1A", coche, "2028/12/01", "2023/12/01");
+
+		coche.AddConductor(condA);
+		coche.AddConductor(condB);
+
+		coche.AddReparacion(rep1);
+		coche.AddReparacion(rep2);
+
+		coche.setPermisoCirc(permiso);
+
+		control.registrarCoche(coche);
+	}
+
+	@Test
+	public void TestRegistrarConductor() {
+
+		Conductor condC = new Conductor("permiso C-3", 141414);
+
+		control.registrarConductor(condC);
+	}
+}

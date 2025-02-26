@@ -1,0 +1,66 @@
+package mongodb.entity;
+
+import java.util.List;
+import java.util.Objects;
+
+public class Conductor {
+	
+	private String idCond;
+	private int numCarnet;
+	private List<Coche> coches;
+	
+	public Conductor() {
+		
+	}
+	
+	public Conductor(String idCond, int numCarnet, List<Coche> coches) {
+		super();
+		this.idCond = idCond;
+		this.numCarnet = numCarnet;
+		this.coches = coches;
+	}
+
+	public String getIdCond() {
+		return idCond;
+	}
+
+	public void setIdCond(String idCond) {
+		this.idCond = idCond;
+	}
+
+	public int getNumCarnet() {
+		return numCarnet;
+	}
+
+	public void setNumCarnet(int numCarnet) {
+		this.numCarnet = numCarnet;
+	}
+
+	public List<Coche> getCoches() {
+		return coches;
+	}
+
+	public void setCoches(List<Coche> coches) {
+		this.coches = coches;
+	}
+	
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Conductor that = (Conductor) obj;
+        return Objects.equals(idCond, that.idCond);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCond);
+    }	
+	
+	
+
+}

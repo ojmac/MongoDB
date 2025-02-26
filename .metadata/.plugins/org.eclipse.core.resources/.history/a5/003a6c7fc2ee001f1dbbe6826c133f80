@@ -1,0 +1,72 @@
+package mongodb.entity;
+
+import java.util.Objects;
+
+public class Reparacion {
+	
+	private int id;
+	private Coche coche;
+	private double PVP;
+	private String descripcion;
+	
+	public Reparacion() {
+		
+	}
+	
+	public Reparacion(int id, Coche coche, double pVP, String descripcion) {
+		super();
+		this.id = id;
+		this.coche = coche;
+		PVP = pVP;
+		this.descripcion = descripcion;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Coche getCoche() {
+		return coche;
+	}
+
+	public void setCoche(Coche coche) {
+		this.coche = coche;
+	}
+
+	public double getPVP() {
+		return PVP;
+	}
+
+	public void setPVP(double pVP) {
+		PVP = pVP;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Reparacion that = (Reparacion) obj;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }	
+}

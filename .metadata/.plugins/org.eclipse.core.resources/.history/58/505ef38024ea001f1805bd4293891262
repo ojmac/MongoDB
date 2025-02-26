@@ -1,0 +1,5 @@
+package mongodb.practica;
+
+public class Coche {
+
+}
